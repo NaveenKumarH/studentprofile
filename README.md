@@ -66,3 +66,7 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/de
 ### `npm run build` fails to minify
 
 This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+
+
+Description:
+        Student Profiling system is an online student details monitoring and maintanance website that allows students and teachers to get information about the academic details.(Mini Project )
