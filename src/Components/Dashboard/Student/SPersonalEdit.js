@@ -3,7 +3,20 @@ import {Link} from 'react-router-dom'
 
 export class SPersonalEdit extends Component {
    state={
-       
+       name :'',
+       email :'',
+dob:'',
+addr:'',
+phno:'',
+devt:'',
+oss:'',
+dbs:'',
+coc:'',
+secb:'',
+secp:'',
+highb:'',
+highp:''
+
    }
    
     handleChange=(e)=>{
@@ -159,7 +172,7 @@ export class SPersonalEdit extends Component {
 <div className="row s1 ">
 <div className="col s2 ">Co-Curriculars :</div>
 <div className="col s4">
-                <input  type="text" id="phno"  onChange={this.handleChange}className="text-field white-text"/>
+                <input  type="text" id="coc"  onChange={this.handleChange}className="text-field white-text"/>
                 </div>
 
 </div>
