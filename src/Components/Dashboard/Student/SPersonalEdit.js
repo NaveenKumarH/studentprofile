@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import {Link} from 'react-router-dom'
-
+import {connect} from 'react-redux'
 export class SPersonalEdit extends Component {
    state={
        name :'',
@@ -15,7 +15,8 @@ coc:'',
 secb:'',
 secp:'',
 highb:'',
-highp:''
+highp:'',
+gender:''
 
    }
    
@@ -120,10 +121,10 @@ highp:''
                 <div >:</div>
                 </div>
                 <div className="col s4">
-               <label><input type="radio" className="with-gap"  onChange={this.handleChange} name="gen" checked></input><span>Male</span></label>
+               <label><input type="radio" className="with-gap"  onChange={this.handleChange} name="gen" checked={this.state.gender==='m'}></input><span>Male</span></label>
               </div>
               <div className="col s4">
-               <label><input type="radio" className="with-gap"  onChange={this.handleChange} name="gen"></input><span>Female</span></label>
+               <label><input type="radio" className="with-gap"  onChange={this.handleChange} name="gen" checked={this.state.gender==='f'}></input><span>Female</span></label>
               </div>
 </div>
             </div>
@@ -209,4 +210,4 @@ highp:''
     }
 }
 
-export default SPersonalEdit
+export default connect()(SPersonalEdit)
