@@ -155,31 +155,28 @@ export class SPersonalEdit extends Component {
 
 </div>
 
-
-
-
-
-
-
 <div className="row s1 center">
 <div >Educational Information</div>
 
 </div>
 <div className="row s1 ">
 <div className="col s2"> Secondary</div><div className="col s1">
-                <div >:</div>
+                <div >:</div></div>
+                
+        <div className="col s1">Board :</div><input type="text" className="col s3 white-text"></input>
+        <div className="col s1">Percentage :</div><input type="text" className="col s3 white-text"></input>
+
                 </div>
-</div>
+
+
 <div className="row s1 ">
 <div className="col s2"> Higher  Secondary</div><div className="col s1">
                 <div >:</div>
                 </div>
+                <div className="col s1">Board :</div><input type="text" className="col s3 white-text"></input>
+        <div className="col s1">Percentage :</div><input type="text" className="col s3 white-text"></input>
 </div>
-<div className="row s1 ">
-<div className="col s2"> Under Graduate</div><div className="col s1">
-                <div >:</div>
-                </div>
-</div>
+
 <div className="row center">
     <Link className="btn green white-text" to='/spersonal'>Save</Link>
 </div>

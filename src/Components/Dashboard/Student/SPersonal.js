@@ -154,11 +154,7 @@ export class SPersonal extends Component {
                     <div >:</div>
                     </div>
 </div>
-<div className="row s1 ">
-    <div className="col s2"> Under Graduate</div><div className="col s1">
-                    <div >:</div>
-                    </div>
-</div>
+
 <Link className="btn red white-text center offset-s6 col s1" to='/spersonal'>Back</Link>
                
             
