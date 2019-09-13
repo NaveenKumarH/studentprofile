@@ -159,7 +159,7 @@ export class SPersonal extends Component {
                     <div >:</div>
                     </div>
 </div>
-
+<Link className="btn red white-text center offset-s6 col s1" to='/spersonal'>Back</Link>
                
             
             </div>

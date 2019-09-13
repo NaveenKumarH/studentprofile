@@ -17,6 +17,12 @@ case 'LOGIN_SUCCESS':
       return{
           ...state,authError:null
       }
+      case 'SIGNUP_SUCCESS':
+            window.open('/student','_self')
+            
+ return{
+
+ }  
     default:
         return state
     }
