@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import {Link} from 'react-router-dom'
 import {connect} from 'react-redux'
+import updatepdetails from '../../../store/Actions/DetailsAction'
 export class SPersonalEdit extends Component {
    state={
        name :'',
@@ -16,8 +17,15 @@ secb:'',
 secp:'',
 highb:'',
 highp:'',
-gender:''
+gender:'',
+uid:''
+   }
 
+   handleSubmit=(e)=>{
+       console.log(this.state)
+    e.preventDefault();
+  this.props.updatepdetails(this.state)
+  
    }
    
     handleChange=(e)=>{
@@ -201,7 +209,7 @@ gender:''
 </div>
 
 <div className="row center">
-    <Link className="btn green white-text" to='/spersonal' onclick={this.handleClick}>Save</Link>
+    <Link className="btn green white-text" to='/spersonal' onClick={this.handleSubmit}>Save</Link>
 </div>
            
         
@@ -209,5 +217,14 @@ gender:''
         )
     }
 }
-
-export default connect()(SPersonalEdit)
+const mapstate=(state)=>{
+    return{
+     ...state
+    }
+}
+const mapdispatch=(dispatch)=>{
+    return{
+        updatepdetails: (details)=>dispatch(updatepdetails(details))
+    }
+}
+export default connect(mapstate,mapdispatch)(SPersonalEdit)
