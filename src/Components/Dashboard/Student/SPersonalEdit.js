@@ -2,6 +2,15 @@ import React, { Component } from 'react'
 import {Link} from 'react-router-dom'
 
 export class SPersonalEdit extends Component {
+   state={
+       
+   }
+   
+    handleChange=(e)=>{
+        this.setState({
+            [e.target.id]: e.target.value
+        })
+     }
     render() {
         
         return (
@@ -22,7 +31,7 @@ export class SPersonalEdit extends Component {
                 <div >:</div>
                 </div>
                 <div className="col s4">
-                <input className="text-field white-text" id="name"/>
+                <input className="text-field white-text"  onChange={this.handleChange} id="name"/>
                 </div>
               
 
@@ -36,7 +45,7 @@ export class SPersonalEdit extends Component {
                 <div >:</div>
                 </div>
                 <div className="col s4">
-                <input className="text-field white-text" htmlFor="email" id="email"/>
+                <input className="text-field white-text" onChange={this.handleChange} htmlFor="email" id="email"/>
                 </div>
               
 
@@ -51,7 +60,7 @@ export class SPersonalEdit extends Component {
                 <div >:</div>
                 </div>
                 <div className="col s4">
-                <input  type="date" className="white-text" id="dob"/>
+                <input  type="date" className="white-text" onChange={this.handleChange} id="dob"/>
                 </div>
               
 
@@ -67,7 +76,7 @@ export class SPersonalEdit extends Component {
                 <div >:</div>
                 </div>
                 <div className="col s4">
-                <input  type="text" className="text-field white-text" id="addr"/>
+                <input  type="text" className="text-field white-text" onChange={this.handleChange} id="addr"/>
                 </div>
               
 
@@ -83,7 +92,7 @@ export class SPersonalEdit extends Component {
                 <div >:</div>
                 </div>
                 <div className="col s4">
-                <input  type="text" id="phno" className="text-field white-text"/>
+                <input  type="text" id="phno"  onChange={this.handleChange} className="text-field white-text"/>
                 </div>
               
 
@@ -98,10 +107,10 @@ export class SPersonalEdit extends Component {
                 <div >:</div>
                 </div>
                 <div className="col s4">
-               <label><input type="radio" className="with-gap" name="gen" checked></input><span>Male</span></label>
+               <label><input type="radio" className="with-gap"  onChange={this.handleChange} name="gen" checked></input><span>Male</span></label>
               </div>
               <div className="col s4">
-               <label><input type="radio" className="with-gap" name="gen"></input><span>Female</span></label>
+               <label><input type="radio" className="with-gap"  onChange={this.handleChange} name="gen"></input><span>Female</span></label>
               </div>
 </div>
             </div>
@@ -120,7 +129,7 @@ export class SPersonalEdit extends Component {
                 
                 </div>
                 <div className="col s4">
-                <input  type="text" id="plang" className="text-field white-text"/>
+                <input  type="text" id="plang"  onChange={this.handleChange} className="text-field white-text"/>
                 </div>
 </div>
 <div className="row s1 ">
@@ -128,7 +137,7 @@ export class SPersonalEdit extends Component {
                 <div >:</div>
                 </div>
                 <div className="col s4">
-                <input  type="text" id="devt" className="text-field white-text"/>
+                <input  type="text" id="devt" onChange={this.handleChange} className="text-field white-text"/>
                 </div>
 </div>
 <div className="row s1 ">
@@ -136,7 +145,7 @@ export class SPersonalEdit extends Component {
                 <div >:</div>
                 </div>
                 <div className="col s4">
-                <input  type="text" id="oss" className="text-field white-text"/>
+                <input  type="text" id="oss"  onChange={this.handleChange} className="text-field white-text"/>
                 </div>
 </div>
 <div className="row s1 ">
@@ -144,13 +153,13 @@ export class SPersonalEdit extends Component {
                 <div >:</div>
                 </div>
                 <div className="col s4">
-                <input  type="text" id="dbs" className="text-field white-text"/>
+                <input  type="text" id="dbs" onChange={this.handleChange} className="text-field white-text"/>
                 </div>
 </div>
 <div className="row s1 ">
 <div className="col s2 ">Co-Curriculars :</div>
 <div className="col s4">
-                <input  type="text" id="phno" className="text-field white-text"/>
+                <input  type="text" id="phno"  onChange={this.handleChange}className="text-field white-text"/>
                 </div>
 
 </div>
@@ -163,8 +172,8 @@ export class SPersonalEdit extends Component {
 <div className="col s2"> Secondary</div><div className="col s1">
                 <div >:</div></div>
                 
-        <div className="col s1">Board :</div><input type="text" className="col s3 white-text"></input>
-        <div className="col s1">Percentage :</div><input type="text" className="col s3 white-text"></input>
+        <div className="col s1">Board :</div><input type="text"id="secb"  onChange={this.handleChange} className="col s3 white-text"></input>
+        <div className="col s1">Percentage :</div><input type="text"id="secp"  onChange={this.handleChange}className="col s3 white-text"></input>
 
                 </div>
 
@@ -173,12 +182,12 @@ export class SPersonalEdit extends Component {
 <div className="col s2"> Higher  Secondary</div><div className="col s1">
                 <div >:</div>
                 </div>
-                <div className="col s1">Board :</div><input type="text" className="col s3 white-text"></input>
-        <div className="col s1">Percentage :</div><input type="text" className="col s3 white-text"></input>
+                <div className="col s1">Board :</div><input type="text"id="highb"  onChange={this.handleChange}className="col s3 white-text"></input>
+        <div className="col s1">Percentage :</div><input type="text"  onChange={this.handleChange} id="highp" className="col s3 white-text"></input>
 </div>
 
 <div className="row center">
-    <Link className="btn green white-text" to='/spersonal'>Save</Link>
+    <Link className="btn green white-text" to='/spersonal' onclick={this.handleClick}>Save</Link>
 </div>
            
         
