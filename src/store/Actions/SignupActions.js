@@ -14,7 +14,7 @@ const signup=(details)=>{
                    type:details.type
                 }
             ).then(()=>{
-                dispatch({type :'SIGNUP_SUCCESS'})
+                dispatch({type :'SIGNUP_SUCCESS',utype:details.type})
             }).catch(err=>{
                 dispatch({type: 'SIGNUP_ERROR',err})
             })

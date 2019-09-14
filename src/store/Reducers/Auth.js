@@ -18,7 +18,13 @@ case 'LOGIN_SUCCESS':
           ...state,authError:null
       }
       case 'SIGNUP_SUCCESS':
+          if(action.utype==='student'){
             window.open('/student','_self')
+          }
+          else{
+              window.open('/teacher','_self')
+          }
+            
             
  return{
 

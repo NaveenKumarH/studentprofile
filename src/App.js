@@ -12,6 +12,7 @@ import SEvents from './Components/Dashboard/Student/SEvents';
 import TEvents from './Components/Dashboard/Teacher/TEvents'
 import SPersonalEdit from './Components/Dashboard/Student/SPersonalEdit'
 import TAddEvent from './Components/Dashboard/Teacher/TAddEvent';
+import Teacher from './Components/Dashboard/Teacher/Teacher'
 function App() {
   return (
     <BrowserRouter>
@@ -29,6 +30,7 @@ function App() {
       <Route path='/tevents' component={TEvents}></Route>
       <Route path='/spersonale' component={SPersonalEdit}></Route>
       <Route path='/teventadd' component={TAddEvent}></Route>
+      <Route path='/teacher' component={Teacher}></Route>
       </Switch>
     </BrowserRouter>
   );

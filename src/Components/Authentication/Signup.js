@@ -63,7 +63,7 @@ type:''
 
 
                 <div className="input-field">
-                    <button className="btn green lighten-1 z-depth-0">SignUp</button>
+                    <button className="btn green lighten-1 z-depth-0" type='submit'>SignUp</button>
                 </div>
                 <div className="red-text center">
                     {authError?<p>{authError}</p>: null}
