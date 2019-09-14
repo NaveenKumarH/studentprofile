@@ -20,7 +20,12 @@ highp:'',
 gender:'',
 
    }
+handleRadio=(e)=>{
 
+    this.setState({
+        gender: e.target.id
+      });
+    }
    handleSubmit=(e)=>{
        console.log(this.state)
     e.preventDefault();
@@ -29,9 +34,11 @@ gender:'',
    }
    
     handleChange=(e)=>{
+      
         this.setState({
             [e.target.id]: e.target.value
         })
+        
      }
     render() {
         
@@ -129,10 +136,10 @@ gender:'',
                 <div >:</div>
                 </div>
                 <div className="col s4">
-               <label><input type="radio" className="with-gap"  onChange={this.handleChange} name="gen" checked={this.state.gender==='m'}></input><span>Male</span></label>
+               <label><input type="radio" className="with-gap" id='m' onChange={this.handleRadio} name="gen" ></input><span>Male</span></label>
               </div>
               <div className="col s4">
-               <label><input type="radio" className="with-gap"  onChange={this.handleChange} name="gen" checked={this.state.gender==='f'}></input><span>Female</span></label>
+               <label><input type="radio" className="with-gap"  id='f' onChange={this.handleRadio} name="gen" ></input><span>Female</span></label>
               </div>
 </div>
             </div>
