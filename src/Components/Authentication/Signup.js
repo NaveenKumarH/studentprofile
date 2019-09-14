@@ -6,9 +6,15 @@ import {connect} from 'react-redux'
 email: '',
 password:'',
 name: '',
-regno: ''
-
+regno: '',
+type:''
      }
+     handleRadio=(e)=>{
+
+        this.setState({
+            type: e.target.id
+          });
+        }
      handleChange=(e)=>{
         this.setState({
             [e.target.id]: e.target.value
@@ -45,6 +51,16 @@ regno: ''
                     <label htmlFor="password">Password</label>
                     <input type="password" id="password" onChange={this.handleChange}></input>
                 </div>
+                <div className="row ">
+<div className="col s2">
+                <label><input type="radio" className="with-gap" id='student' onChange={this.handleRadio} name="type" ></input><span>Student</span></label>
+                </div>
+                <div className="col s2">
+               <label><input type="radio" className="with-gap"  id='teacher' onChange={this.handleRadio} name="type" ></input><span>Teacher</span></label>
+             </div>
+
+             </div>
+
 
                 <div className="input-field">
                     <button className="btn green lighten-1 z-depth-0">SignUp</button>

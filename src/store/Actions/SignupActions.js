@@ -11,7 +11,7 @@ const signup=(details)=>{
                     name: details.name,
                     regno: details.regno,
                    email: details.email,
-                   type:'student'
+                   type:details.type
                 }
             ).then(()=>{
                 dispatch({type :'SIGNUP_SUCCESS'})
