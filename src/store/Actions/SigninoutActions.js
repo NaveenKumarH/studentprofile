@@ -1,3 +1,4 @@
+
 export const signin =(credentials) =>{
     return(dispatch,getState,{ getFirebase,getFirestore})=>{
         const firebase=getFirebase();
@@ -5,7 +6,8 @@ export const signin =(credentials) =>{
         firebase.auth().signInWithEmailAndPassword(
             credentials.email,
             credentials.password
-        ).then(()=> {dispatch({type :'LOGIN_SUCCESS'})}
+        ).then(()=> {
+            dispatch({type :'LOGIN_SUCCESS',uid:getState().firebase.auth.uid})}
         ).catch((err)=>{
             dispatch({type: 'LOGIN_ERROR',err})
         })

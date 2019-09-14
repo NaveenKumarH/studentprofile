@@ -73,14 +73,10 @@ type:''
         )
     }
 }
-const mapstate=(state)=>{
-    return{
-     
-    }
-}
+
 const mapdispatch=(dispatch)=>{
     return{
         signup: (details)=>dispatch(signup(details))
     }
 }
-export default connect(mapstate,mapdispatch)(Signup)
+export default connect(null,mapdispatch)(Signup)
