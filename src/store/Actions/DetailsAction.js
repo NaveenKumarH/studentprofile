@@ -1,8 +1,8 @@
  const updatepdetails =(details) =>{
     return(dispatch,getState,{ getFirebase,getFirestore})=>{
-        const state=getState;
+        const state=getState().firebase;
         const firestore=getFirestore();
-        firestore.collection('details').doc(state.auth.firebase.auth.uid).set({
+        firestore.collection('details').doc(state.auth.uid).set({
             ...details,
             addtime: new Date()
 

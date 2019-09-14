@@ -18,7 +18,7 @@ secp:'',
 highb:'',
 highp:'',
 gender:'',
-uid:''
+
    }
 
    handleSubmit=(e)=>{
