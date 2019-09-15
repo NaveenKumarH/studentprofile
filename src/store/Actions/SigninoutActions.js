@@ -7,7 +7,7 @@ export const signin =(credentials) =>{
             credentials.email,
             credentials.password
         ).then(()=> {
-            dispatch({type :'LOGIN_SUCCESS',uid:getState().firebase.auth.uid})}
+            dispatch({type :'LOGIN_SUCCESS',})}
         ).catch((err)=>{
             dispatch({type: 'LOGIN_ERROR',err})
         })
