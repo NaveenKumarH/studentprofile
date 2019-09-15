@@ -1,4 +1,4 @@
-import {database} from 'firebase'
+
 
 const initState={
     authError:null,
@@ -7,22 +7,24 @@ const initState={
 const Auth = (state = initState,action) => {
     switch(action.type){
         case 'LOGIN_ERROR':
+          console.log(action.err)
             return {...state,authError: 'Login Failed'}
 case 'LOGIN_SUCCESS':
-        const docRef = database.collection('users').doc(action.uid);
-            
-        docRef.get().then((doc) => {
-           
-                 this.setState( doc.data());
-               
-            });
-        if(this.state.data.type==='student'){
-            window.open('/student','_self')
-          }
-          else{
-              window.open('/teacher','_self')
-          }
-    
+ console.log(action)
+     if(action.utype==='student')
+     
+        {  window.open('/student','_self')
+    }
+    else if(action.utype==='teacher'){
+       
+        window.open('/teacher','_self')
+       
+    }
+
+
+
+        
+        
     return{
         ...state,authError:null
     }
