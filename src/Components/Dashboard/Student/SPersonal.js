@@ -1,7 +1,23 @@
 import React, { Component } from 'react'
 import {Link} from 'react-router-dom'
+import firebase from 'firebase'
+import {connect} from 'react-redux'
 export class SPersonal extends Component {
+    
+ init=()=>{
+    const firestore=firebase.firestore()
+    const docRef = firestore.collection('details').doc(this.props.firebase.auth.uid);
+  
+   docRef.get().then((doc)=>{
+       
+    }).catch((err)=>{
+        console.log(err)
+    })
+
+  }
+ 
     render() {
+        this.init()
         return (
             <div className="container white-text">
                 
@@ -163,4 +179,13 @@ export class SPersonal extends Component {
     }
 }
 
-export default SPersonal
+const mapstate =(state) =>{
+    return{
+        
+        ...state
+    }
+}
+
+
+
+export default connect(mapstate)(SPersonal)

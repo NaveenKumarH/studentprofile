@@ -216,7 +216,7 @@ handleRadio=(e)=>{
 </div>
 
 <div className="row center">
-    <Link className="btn green white-text" to='/spersonal' onClick={this.handleSubmit}>Save</Link>
+    <button className="btn green white-text"  onClick={this.handleSubmit}>Save</button>
 </div>
            
         

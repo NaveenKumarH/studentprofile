@@ -16,6 +16,9 @@ gender:''
 }
 const Details =(state=initstate,action) =>{
 switch(action.type){
+    case 'UPDATE_EVENT_SUCCESS':
+        window.open('/spersonal','_self')
+        return{...state}
     default:
         return {...state}
 }
