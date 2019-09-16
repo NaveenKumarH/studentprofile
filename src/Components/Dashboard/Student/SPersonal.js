@@ -4,20 +4,20 @@ import firebase from 'firebase'
 import {connect} from 'react-redux'
 export class SPersonal extends Component {
     
- init=()=>{
-    const firestore=firebase.firestore()
-    const docRef = firestore.collection('details').doc(this.props.firebase.auth.uid);
-  
-   docRef.get().then((doc)=>{
-       
-    }).catch((err)=>{
-        console.log(err)
-    })
-
-  }
+state={
+    data:''
+}
  
     render() {
-        this.init()
+        
+        const firestore=firebase.firestore()
+        const docRef = firestore.collection('details').doc(this.props.firebase.auth.uid);
+      
+       docRef.get().then((doc)=>{
+           this.setState({data:doc.data()})
+        }).catch((err)=>{
+            console.log(err)
+        })
         return (
             <div className="container white-text">
                 
@@ -36,7 +36,7 @@ export class SPersonal extends Component {
                     <div >:</div>
                     </div>
                     <div className="col s2">
-                    <div>Name</div>
+                    <div>{this.state.data.name}</div>
                     </div>
                   
 
