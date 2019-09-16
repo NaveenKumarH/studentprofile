@@ -15,12 +15,19 @@ state={
       
        docRef.get().then((doc)=>{
            this.setState({data:doc.data()})
+           if(this.state.data.gender==='m'){
+               this.setState({...this.state,gender:'Male'})
+           }
+           else if(this.state.data.gender==='f'){
+            this.setState({...this.state,gender:'Female'})
+           }
         }).catch((err)=>{
             console.log(err)
         })
+        
         return (
             <div className="container white-text">
-                
+             
                 <br></br>
                 <div className="row s1 center">
 <div className="col offset-s5 center"><div >Personal Information</div> </div><div className="col right"> <Link className="btn green white-text" to='/spersonale'>Edit</Link></div>
@@ -35,7 +42,7 @@ state={
                     <div className="col s1">
                     <div >:</div>
                     </div>
-                    <div className="col s2">
+                    <div className="col s3">
                     <div>{this.state.data.name}</div>
                     </div>
                   
@@ -50,7 +57,7 @@ state={
                     <div >:</div>
                     </div>
                     <div className="col s2">
-                    <div >Email</div>
+                    <div >{this.state.data.email}</div>
                     </div>
                   
 
@@ -65,7 +72,7 @@ state={
                     <div >:</div>
                     </div>
                     <div className="col s2">
-                    <div >Name</div>
+                    <div >{this.state.data.dob}</div>
                     </div>
                   
 
@@ -81,7 +88,7 @@ state={
                     <div >:</div>
                     </div>
                     <div className="col s2">
-                    <div className="text" >Name</div>
+                    <div className="text" >{this.state.data.addr}</div>
                     </div>
                   
 
@@ -97,7 +104,7 @@ state={
                     <div >:</div>
                     </div>
                     <div className="col s2">
-                    <div className="number" >no.</div>
+                    <div className="number" >{this.state.data.phno}</div>
                     </div>
                   
 
@@ -112,7 +119,9 @@ state={
                     <div >:</div>
                     </div>
                     <div className="col s2">
-                    <div  >Gender</div>
+                    <div >
+               {this.state.gender}
+                </div>
                     </div>
                   
 </div>
@@ -129,25 +138,47 @@ state={
 <div className="row s1 ">
     <div className="col s2 offset-s1">Languages </div><div className="col s1">
                     <div >:</div>
+                    </div> <div className="col s2">
+                    <div >
+               {this.state.data.plang}
+                </div>
                     </div>
 </div>
 <div className="row s1 ">
     <div className="col s2 offset-s1">Development Tools </div><div className="col s1">
                     <div >:</div>
+                    </div><div className="col s2">
+                    <div >
+               {this.state.data.devt}
+                </div>
                     </div>
 </div>
 <div className="row s1 ">
     <div className="col s2 offset-s1">Operating Systems </div><div className="col s1">
                     <div >:</div>
                     </div>
+                    <div className="col s2">
+                    <div >
+               {this.state.data.oss}
+                </div>
+                    </div>
 </div>
 <div className="row s1 ">
     <div className="col s2 offset-s1">Databases </div><div className="col s1">
                     <div >:</div>
                     </div>
+                    <div className="col s2">
+                    <div >
+               {this.state.data.dbs}
+                </div>
+                    </div>
 </div>
 <div className="row s1 ">
-    <div className="col s2 ">Co-Curricular :</div>
+    <div className="col s2 ">Co-Curricular :</div><div className="col s2">
+                    <div >
+               {this.state.data.coc}
+                </div>
+                    </div>
 </div>
 
 
@@ -163,16 +194,36 @@ state={
 <div className="row s1 ">
     <div className="col s2"> Secondary</div><div className="col s1">
                     <div >:</div>
+                    </div><div className="col s2">
+                    <div ><span>Board : </span>
+               {this.state.data.secb}
+                </div>
+                    </div>
+                    <div className="col s2">
+                    <div ><span>Percentage : </span>
+               {this.state.data.secp}
+                </div>
                     </div>
 </div>
 <div className="row s1 ">
     <div className="col s2"> Higher  Secondary</div><div className="col s1">
                     <div >:</div>
                     </div>
+                    <div className="col s2">
+                    <div ><span>Board : </span>
+               {this.state.data.highb}
+                </div>
+                    </div>
+                    <div className="col s2">
+                    <div ><span>Percentage : </span>
+               {this.state.data.highp}
+                </div>
+                    </div>
 </div>
-
-<Link className="btn red white-text center offset-s6 col s1" to='/student'>Back</Link>
-               
+<br></br>
+<div className="row center">
+<Link className="btn red white-text center offset-s6 col s1 pad2x" to='/student'>Back</Link>
+</div>     
             
             </div>
         )
