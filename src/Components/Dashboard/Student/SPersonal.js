@@ -5,7 +5,22 @@ import {connect} from 'react-redux'
 export class SPersonal extends Component {
     
 state={
-    data:''
+    data:{
+        name :'',
+    email :'',
+dob:'',
+addr:'',
+phno:'',
+devt:'',
+oss:'',
+dbs:'',
+coc:'',
+secb:'',
+secp:'',
+highb:'',
+highp:'',
+gender:''
+    }
 }
  
     render() {
