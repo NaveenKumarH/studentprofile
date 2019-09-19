@@ -27,7 +27,7 @@ gender:''
         
         const firestore=firebase.firestore()
         const docRef = firestore.collection('details').doc(this.props.firebase.auth.uid);
-      
+      var links=null
        docRef.get().then((doc)=>{
            this.setState({data:doc.data()})
            if(this.state.data.gender==='m'){
