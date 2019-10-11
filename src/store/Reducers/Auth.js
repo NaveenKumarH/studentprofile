@@ -1,14 +1,25 @@
 
 
+
 const initState={
     authError:null,
-    data:''
+    log:''
 }
 const Auth = (state = initState,action) => {
     switch(action.type){
         case 'LOGIN_ERROR':
-          console.log(action.err)
-            return {...state,authError: 'Login Failed'}
+            console.log(action.err)
+          if(action.err.code==='auth/user-not-found'){
+              state.authError='User not found'
+          }
+          else if(action.err.code==='auth/wrong-password'){
+            state.authError='Invalid Password'
+          }
+          else{
+              state.authError=null
+              state.log='Signing in....'
+          }
+            return {...state}
 case 'LOGIN_SUCCESS':
  console.log(action)
      if(action.utype==='student')

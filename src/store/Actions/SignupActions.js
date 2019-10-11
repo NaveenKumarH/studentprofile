@@ -6,6 +6,26 @@ const signup=(details)=>{
             details.email,
             details.password
         ).then((res)=>{
+            firestore.collection('details').doc(res.user.uid).set({
+              
+                    name :details.name,
+                email :details.email,
+            dob:'',
+            addr:'',
+            phno:'',
+            devt:'',
+            oss:'',
+            dbs:'',
+            coc:'',
+            secb:'',
+            secp:'',
+            highb:'',
+            highp:'',
+            gender:'',
+                plang:'',
+                addtime: new Date()
+    
+            })
             return firestore.collection('users').doc(res.user.uid).set(
                 {
                     name: details.name,
@@ -13,6 +33,11 @@ const signup=(details)=>{
                    email: details.email,
                    type:details.type
                 }
+
+
+
+
+                
             ).then(()=>{
                 dispatch({type :'SIGNUP_SUCCESS',utype:details.type})
             }).catch(err=>{

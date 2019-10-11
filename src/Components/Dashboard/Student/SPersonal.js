@@ -5,7 +5,7 @@ import {connect} from 'react-redux'
 export class SPersonal extends Component {
     
 state={
-    data:{
+   
         name :'',
     email :'',
 dob:'',
@@ -20,21 +20,23 @@ secp:'',
 highb:'',
 highp:'',
 gender:''
-    }
+   
 }
  
     render() {
         
         const firestore=firebase.firestore()
         const docRef = firestore.collection('details').doc(this.props.firebase.auth.uid);
-      var links=null
+     
        docRef.get().then((doc)=>{
-           this.setState({data:doc.data()})
-           if(this.state.data.gender==='m'){
+           console.log(doc.data())
+           this.setState(doc.data())
+           if(this.state.gender==='m'){
                this.setState({...this.state,gender:'Male'})
            }
-           else if(this.state.data.gender==='f'){
+           else if(this.state.gender==='f'){
             this.setState({...this.state,gender:'Female'})
+           
            }
         }).catch((err)=>{
             console.log(err)
@@ -58,7 +60,7 @@ gender:''
                     <div >:</div>
                     </div>
                     <div className="col s3">
-                    <div>{this.state.data.name}</div>
+                    <div>{this.state.name}</div>
                     </div>
                   
 
@@ -72,7 +74,7 @@ gender:''
                     <div >:</div>
                     </div>
                     <div className="col s2">
-                    <div >{this.state.data.email}</div>
+                    <div >{this.state.email}</div>
                     </div>
                   
 
@@ -87,7 +89,7 @@ gender:''
                     <div >:</div>
                     </div>
                     <div className="col s2">
-                    <div >{this.state.data.dob}</div>
+                    <div >{this.state.dob}</div>
                     </div>
                   
 
@@ -103,7 +105,7 @@ gender:''
                     <div >:</div>
                     </div>
                     <div className="col s2">
-                    <div className="text" >{this.state.data.addr}</div>
+                    <div className="text" >{this.state.addr}</div>
                     </div>
                   
 
@@ -119,7 +121,7 @@ gender:''
                     <div >:</div>
                     </div>
                     <div className="col s2">
-                    <div className="number" >{this.state.data.phno}</div>
+                    <div className="number" >{this.state.phno}</div>
                     </div>
                   
 
@@ -141,8 +143,7 @@ gender:''
                   
 </div>
                 </div>
-<div className="col  offset-s5"> 
-<div >Photo</div> </div>
+
 </div>
                 <div className="row s1 center">
 <div >Skills</div>
@@ -155,7 +156,7 @@ gender:''
                     <div >:</div>
                     </div> <div className="col s2">
                     <div >
-               {this.state.data.plang}
+               {this.state.plang}
                 </div>
                     </div>
 </div>
@@ -164,7 +165,7 @@ gender:''
                     <div >:</div>
                     </div><div className="col s2">
                     <div >
-               {this.state.data.devt}
+               {this.state.devt}
                 </div>
                     </div>
 </div>
@@ -174,7 +175,7 @@ gender:''
                     </div>
                     <div className="col s2">
                     <div >
-               {this.state.data.oss}
+               {this.state.oss}
                 </div>
                     </div>
 </div>
@@ -184,14 +185,14 @@ gender:''
                     </div>
                     <div className="col s2">
                     <div >
-               {this.state.data.dbs}
+               {this.state.dbs}
                 </div>
                     </div>
 </div>
 <div className="row s1 ">
     <div className="col s2 ">Co-Curricular :</div><div className="col s2">
                     <div >
-               {this.state.data.coc}
+               {this.state.coc}
                 </div>
                     </div>
 </div>
@@ -211,12 +212,12 @@ gender:''
                     <div >:</div>
                     </div><div className="col s2">
                     <div ><span>Board : </span>
-               {this.state.data.secb}
+               {this.state.secb}
                 </div>
                     </div>
                     <div className="col s2">
                     <div ><span>Percentage : </span>
-               {this.state.data.secp}
+               {this.state.secp}
                 </div>
                     </div>
 </div>
@@ -226,12 +227,12 @@ gender:''
                     </div>
                     <div className="col s2">
                     <div ><span>Board : </span>
-               {this.state.data.highb}
+               {this.state.highb}
                 </div>
                     </div>
                     <div className="col s2">
                     <div ><span>Percentage : </span>
-               {this.state.data.highp}
+               {this.state.highp}
                 </div>
                     </div>
 </div>

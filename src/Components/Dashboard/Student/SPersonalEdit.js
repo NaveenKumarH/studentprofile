@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import {Link} from 'react-router-dom'
 import {connect} from 'react-redux'
+
 import updatepdetails from '../../../store/Actions/DetailsAction'
 export class SPersonalEdit extends Component {
    state={
@@ -41,7 +42,10 @@ handleRadio=(e)=>{
         
      }
     render() {
-        
+     
+
+
+
         return (
             <div className="container white-text">
                 
@@ -143,8 +147,7 @@ handleRadio=(e)=>{
               </div>
 </div>
             </div>
-<div className="col  offset-s5"> 
-<div >Photo</div> </div>
+
 </div>
             <div className="row s1 center">
 <div >Skills</div>

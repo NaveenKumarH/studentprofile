@@ -27,7 +27,8 @@ type:''
     }
    
     render() {
-        const { authError}=this.props;
+        const { authError}=this.props
+        const{log}=this.props;
         return (
             <div className="container">
                 <form onSubmit={this.handleSubmit} className="white">
@@ -67,6 +68,9 @@ type:''
                 </div>
                 <div className="red-text center">
                     {authError?<p>{authError}</p>: null}
+                </div>
+                <div className="green-text center">
+                    {log?<p>{log}</p>:null}
                 </div>
                 </form>
             </div>
