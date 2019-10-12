@@ -31,7 +31,7 @@ class Teacher extends Component {
             </Link>
           </div>
           <div className="row container">
-            <Link to="/tevents" className="white-text">
+            <Link to="/teventslist" className="white-text">
               {" "}
               <div className="card-panel grey darken-3 center">
                 EVENTS<br></br>

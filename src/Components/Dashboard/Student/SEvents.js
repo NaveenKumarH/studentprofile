@@ -1,16 +1,17 @@
-import React, { Component } from "react";
+import React from "react";
 
 import { connect } from "react-redux";
 import EventSync from "./EventSync";
 
-export class SEvents extends Component {
-  render() {
-    return (
-      <div className="container center ">
-        <EventSync></EventSync>
-      </div>
-    );
-  }
-}
+const SEvents = ({ events }) => {
+  return (
+    <div className="container">
+      {events &&
+        events.map(event => {
+          return <EventSync event={event} />;
+        })}
+    </div>
+  );
+};
 
 export default connect()(SEvents);

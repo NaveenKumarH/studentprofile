@@ -1,21 +1,17 @@
-import React, { Component } from "react";
-import { Link } from "react-router-dom";
+import React from "react";
+
 import { connect } from "react-redux";
 import EventSync from "../Student/EventSync";
 
-export class TEvents extends Component {
-  render() {
-    return (
-      <div className="container center ">
-        <div className="btn green ">
-          <Link to="/teventadd" className="white-text">
-            Add New
-          </Link>
-        </div>
-        <EventSync></EventSync>
-      </div>
-    );
-  }
-}
+const TEvents = ({ events }) => {
+  return (
+    <div className="container">
+      {events &&
+        events.map(event => {
+          return <EventSync event={event} />;
+        })}
+    </div>
+  );
+};
 
 export default connect()(TEvents);

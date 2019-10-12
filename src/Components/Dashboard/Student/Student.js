@@ -31,7 +31,7 @@ class Student extends Component {
             </Link>
           </div>
           <div className="row container">
-            <Link to="/sevents" className="white-text">
+            <Link to="/seventslist" className="white-text">
               {" "}
               <div className="card-panel grey darken-3 center">
                 EVENTS<br></br>

@@ -38,7 +38,12 @@ export class TAddEvent extends Component {
           </div>
           <div className="input-field">
             <label>Date</label>
-            <input type="text" id="date" onChange={this.handleChange}></input>
+            <input
+              type="date"
+              id="date"
+              min={new Date()}
+              onChange={this.handleChange}
+            ></input>
           </div>
           <div className="input-field">
             <button

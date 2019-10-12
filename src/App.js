@@ -8,8 +8,8 @@ import Student from "./Components/Dashboard/Student/Student";
 import SPersonal from "./Components/Dashboard/Student/SPersonal";
 import SAcademics from "./Components/Dashboard/Student/SAcademics";
 import SAttendance from "./Components/Dashboard/Student/SAttendance";
-import SEvents from "./Components/Dashboard/Student/SEvents";
-import TEvents from "./Components/Dashboard/Teacher/TEvents";
+import SEventLists from "./Components/Dashboard/Student/SEventLists";
+import TEventList from "./Components/Dashboard/Teacher/TEventList";
 import SPersonalEdit from "./Components/Dashboard/Student/SPersonalEdit";
 import TAddEvent from "./Components/Dashboard/Teacher/TAddEvent";
 import Teacher from "./Components/Dashboard/Teacher/Teacher";
@@ -28,8 +28,8 @@ function App() {
         <Route path="/spersonal" component={SPersonal}></Route>
         <Route path="/sacademics" component={SAcademics}></Route>
         <Route path="/sattendance" component={SAttendance}></Route>
-        <Route path="/sevents" component={SEvents}></Route>
-        <Route path="/tevents" component={TEvents}></Route>
+        <Route path="/seventslist" component={SEventLists}></Route>
+        <Route path="/teventslist" component={TEventList}></Route>
         <Route path="/spersonale" component={SPersonalEdit}></Route>
         <Route path="/teventadd" component={TAddEvent}></Route>
         <Route path="/teacher" component={Teacher}></Route>

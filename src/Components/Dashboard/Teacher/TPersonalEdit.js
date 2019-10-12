@@ -101,6 +101,7 @@ export class TPersonalEdit extends Component {
               <div className="col s4">
                 <input
                   type="date"
+                  max="2000-12-31"
                   className="white-text"
                   onChange={this.handleChange}
                   id="dob"
@@ -135,6 +136,9 @@ export class TPersonalEdit extends Component {
               <div className="col s4">
                 <input
                   type="text"
+                  min="1000000000"
+                  max="9999999999"
+                  maxLength="10"
                   id="phno"
                   onChange={this.handleChange}
                   className="text-field white-text"
