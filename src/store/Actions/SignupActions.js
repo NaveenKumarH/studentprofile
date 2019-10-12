@@ -23,6 +23,11 @@ const signup=(details)=>{
             highp:'',
             gender:'',
                 plang:'',
+                ugc:'',
+                ugd:'',
+                pgc:'',
+                pgd:'',
+                type:details.type,
                 addtime: new Date()
     
             })

@@ -3,7 +3,8 @@
 
 const initState={
     authError:null,
-    log:''
+    log:'',
+    type:''
 }
 const Auth = (state = initState,action) => {
     switch(action.type){
@@ -32,12 +33,9 @@ case 'LOGIN_SUCCESS':
        
     }
 
-
-
-        
         
     return{
-        ...state,authError:null
+        ...state,authError:null,type:action.utype
     }
   case 'LOGOUT_SUCCESS':
       return{

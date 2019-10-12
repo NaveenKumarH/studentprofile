@@ -12,15 +12,24 @@ secb:'',
 secp:'',
 highb:'',
 highp:'',
-gender:''
+gender:'',
+type:'',
+ugc:'',
+ugd:'',
+pgc:'',
+pgd:''
 }
 const Details =(state=initstate,action) =>{
 switch(action.type){
     case 'UPDATE_EVENT_SUCCESS':
-        window.open('/spersonal','_self')
-        return{...state}
+        if(action.details.type==='student'){
+        window.open('/spersonal','_self')}
+        else if(action.details.type==='teacher'){
+            window.open('/tpersonal','_self')}
+        
+        return{...action.details}
     default:
-        return {...state}
+        return {...action.details}
 }
 }
 export default Details
