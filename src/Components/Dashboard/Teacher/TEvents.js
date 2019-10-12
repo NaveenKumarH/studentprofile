@@ -8,7 +8,7 @@ export class TEvents extends Component {
     return (
       <div className="container center ">
         <div className="btn green ">
-          <Link to="/seventadd" className="white-text">
+          <Link to="/teventadd" className="white-text">
             Add New
           </Link>
         </div>

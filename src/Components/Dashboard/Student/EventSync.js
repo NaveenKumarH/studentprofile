@@ -1,6 +1,6 @@
 import React from "react";
 
-const EventSync = () => {
+const EventSync = props => {
   return (
     <div className="section">
       <div className="card z-z-depth-0">
