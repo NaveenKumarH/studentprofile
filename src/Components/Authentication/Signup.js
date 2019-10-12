@@ -39,7 +39,12 @@ class Signup extends Component {
 
           <div className="input-field">
             <label htmlFor="regno">Reg No.</label>
-            <input type="text" id="regno" onChange={this.handleChange}></input>
+            <input
+              type="text"
+              id="regno"
+              maxLength="10"
+              onChange={this.handleChange}
+            ></input>
           </div>
 
           <div className="input-field">

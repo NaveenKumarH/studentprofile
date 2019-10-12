@@ -2,10 +2,6 @@ export const addevent = event => {
   return (dispatch, getState, { getFirebase, getFirestore }) => {
     const firestore = getFirestore();
 
-    const everyevent = firestore
-      .collection("events")
-      .get()
-      .data();
     if (event.title === "") {
       dispatch({ type: "ADD_EVENT_ERROR" });
     } else {
@@ -16,10 +12,10 @@ export const addevent = event => {
           addtime: new Date()
         })
         .then(() => {
-          dispatch({ type: "ADD_EVENT_SUCCESS", event, everyevent });
+          dispatch({ type: "ADD_EVENT_SUCCESS", event });
         })
         .catch(err => {
-          dispatch({ type: "ADD_EVENT_ERROR", err, everyevent });
+          dispatch({ type: "ADD_EVENT_ERROR", err });
         });
     }
   };
