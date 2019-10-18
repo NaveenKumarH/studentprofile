@@ -8,9 +8,9 @@ const Academic = (state = initState, action) => {
       window.open("tacademics", "_self");
       return { ...state };
     case "RETRIEVE_SUCCESS":
-      return { ...state, [action.id]: action.data };
+      return { ...state, [action.id]: action.data, pre: action.pre };
     case "RETRIEVE_ERROR":
-      return { ...state, data: action.err };
+      return { ...state, data: null };
     default:
       return { ...state };
   }

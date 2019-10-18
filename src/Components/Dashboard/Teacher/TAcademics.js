@@ -39,12 +39,17 @@ export class TAcademics extends Component {
     );
   }
 }
+const mapstate = state => {
+  return {
+    academic: state.academic
+  };
+};
 const mapdispatch = dispatch => {
   return {
     search: details => dispatch(search(details))
   };
 };
 export default connect(
-  null,
+  mapstate,
   mapdispatch
 )(TAcademics);
