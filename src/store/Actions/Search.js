@@ -1,20 +1,21 @@
 const search = details => {
   return (dispatch, getState, { getFirebase, getFirestore }) => {
-    let id = 0,
-      flag = 0;
+    let flag = 0;
     const firestore = getFirestore();
     firestore
       .collection("academics")
       .get()
       .then(doc => {
         doc.docs.forEach(data => {
-          if (data.data().details.srn === details.se) {
-            id += 1;
+          if (
+            data.data().details.srn === details.se &&
+            data.data().details.tid === details.tid
+          ) {
             flag = 1;
             dispatch({
               type: "RETRIEVE_SUCCESS",
               data: data.data(),
-              id: id,
+              id: "s",
               pre: "yes"
             });
           }

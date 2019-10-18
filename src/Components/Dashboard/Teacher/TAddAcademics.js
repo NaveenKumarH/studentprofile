@@ -2,6 +2,9 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import addaca from "../../../store/Actions/AcademicAction";
 export class TAddAcademics extends Component {
+  state = {
+    tid: this.props.tid
+  };
   handleChange = e => {
     this.setState({
       [e.target.id]: e.target.value
@@ -51,12 +54,17 @@ export class TAddAcademics extends Component {
     );
   }
 }
+const mapstate = state => {
+  return {
+    tid: state.firebase.auth.uid
+  };
+};
 const mapdispatch = dispatch => {
   return {
     addaca: details => dispatch(addaca(details))
   };
 };
 export default connect(
-  null,
+  mapstate,
   mapdispatch
 )(TAddAcademics);
