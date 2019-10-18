@@ -33,7 +33,6 @@ export class TPersonal extends Component {
     docRef
       .get()
       .then(doc => {
-        console.log(doc.data());
         this.setState(doc.data());
         if (this.state.gender === "m") {
           this.setState({ ...this.state, gender: "Male" });

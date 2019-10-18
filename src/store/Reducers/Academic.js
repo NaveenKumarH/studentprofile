@@ -3,12 +3,16 @@ const Academic = (state = initState, action) => {
   switch (action.type) {
     case "ADD_SUCCESS":
       window.open("tacademics", "_self");
-      return {};
+      return { ...state };
     case "ADD_ERROR":
       window.open("tacademics", "_self");
-      return {};
+      return { ...state };
+    case "RETRIEVE_SUCCESS":
+      return { ...state, [action.id]: action.data };
+    case "RETRIEVE_ERROR":
+      return { ...state, data: action.err };
     default:
-      return state;
+      return { ...state };
   }
 };
 export default Academic;

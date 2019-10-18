@@ -17,6 +17,7 @@ import TPersonal from "./Components/Dashboard/Teacher/TPersonal";
 import TPersonalEdit from "./Components/Dashboard/Teacher/TPersonalEdit";
 import TAcademics from "./Components/Dashboard/Teacher/TAcademics";
 import TAddAcademics from "./Components/Dashboard/Teacher/TAddAcademics";
+
 function App() {
   return (
     <BrowserRouter>
