@@ -1,6 +1,7 @@
 const addaca = details => {
   return (dispatch, getState, { getFirebase, getFirestore }) => {
     const firestore = getFirestore();
+
     firestore
       .collection("academics")
       .add({
