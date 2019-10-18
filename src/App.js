@@ -15,6 +15,8 @@ import TAddEvent from "./Components/Dashboard/Teacher/TAddEvent";
 import Teacher from "./Components/Dashboard/Teacher/Teacher";
 import TPersonal from "./Components/Dashboard/Teacher/TPersonal";
 import TPersonalEdit from "./Components/Dashboard/Teacher/TPersonalEdit";
+import TAcademics from "./Components/Dashboard/Teacher/TAcademics";
+import TAddAcademics from "./Components/Dashboard/Teacher/TAddAcademics";
 function App() {
   return (
     <BrowserRouter>
@@ -27,6 +29,7 @@ function App() {
         <Route path="/student" component={Student}></Route>
         <Route path="/spersonal" component={SPersonal}></Route>
         <Route path="/sacademics" component={SAcademics}></Route>
+        <Route path="/tacademics" component={TAcademics}></Route>
         <Route path="/sattendance" component={SAttendance}></Route>
         <Route path="/seventslist" component={SEventLists}></Route>
         <Route path="/teventslist" component={TEventList}></Route>
@@ -35,6 +38,7 @@ function App() {
         <Route path="/teacher" component={Teacher}></Route>
         <Route path="/tpersonal" component={TPersonal}></Route>
         <Route path="/tpersonale" component={TPersonalEdit}></Route>
+        <Route path="/taddacademics" component={TAddAcademics}></Route>
       </Switch>
     </BrowserRouter>
   );
