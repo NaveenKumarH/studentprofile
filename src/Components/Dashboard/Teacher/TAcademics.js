@@ -25,6 +25,15 @@ export class TAcademics extends Component {
             Add New
           </Link>
         </div>
+        <div className="row input-field">
+          <label>Exam.</label>
+          <input
+            className="white"
+            type="text"
+            id="exam"
+            onChange={this.handleChange}
+          ></input>
+        </div>
         <div className="row input-field ">
           <label>Student Roll No.</label>
           <input

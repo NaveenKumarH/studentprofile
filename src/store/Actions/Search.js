@@ -9,7 +9,8 @@ const search = details => {
         doc.docs.forEach(data => {
           if (
             data.data().details.srn === details.se &&
-            data.data().details.tid === details.tid
+            data.data().details.tid === details.tid &&
+            data.data().details.exam === details.exam
           ) {
             flag = 1;
             dispatch({
