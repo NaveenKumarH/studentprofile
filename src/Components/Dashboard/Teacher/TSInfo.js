@@ -112,7 +112,15 @@ export class TSInfo extends Component {
                         <div>:</div>
                       </div>
                       <div className="col s2">
-                        <div>{this.props.academics.s.gender}</div>
+                        <div>
+                          {this.props.academics.s.gender === "" ? (
+                            <div></div>
+                          ) : this.props.academics.s.gender === "m" ? (
+                            <span>Male</span>
+                          ) : (
+                            <span>Female</span>
+                          )}
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -129,7 +137,7 @@ export class TSInfo extends Component {
                     <div>:</div>
                   </div>{" "}
                   <div className="col s2">
-                    <div>{this.state.plang}</div>
+                    <div>{this.props.academics.s.plang}</div>
                   </div>
                 </div>
                 <div className="row s1 ">
@@ -138,7 +146,7 @@ export class TSInfo extends Component {
                     <div>:</div>
                   </div>
                   <div className="col s2">
-                    <div>{this.state.devt}</div>
+                    <div>{this.props.academics.s.devt}</div>
                   </div>
                 </div>
                 <div className="row s1 ">
@@ -147,7 +155,7 @@ export class TSInfo extends Component {
                     <div>:</div>
                   </div>
                   <div className="col s2">
-                    <div>{this.state.oss}</div>
+                    <div>{this.props.academics.s.oss}</div>
                   </div>
                 </div>
                 <div className="row s1 ">
@@ -156,13 +164,13 @@ export class TSInfo extends Component {
                     <div>:</div>
                   </div>
                   <div className="col s2">
-                    <div>{this.state.dbs}</div>
+                    <div>{this.props.academics.s.dbs}</div>
                   </div>
                 </div>
                 <div className="row s1 ">
                   <div className="col s2 ">Co-Curricular :</div>
                   <div className="col s2">
-                    <div>{this.state.coc}</div>
+                    <div>{this.props.academics.s.coc}</div>
                   </div>
                 </div>
                 <div className="row s1 center">
@@ -176,13 +184,13 @@ export class TSInfo extends Component {
                   <div className="col s2">
                     <div>
                       <span>Board : </span>
-                      {this.state.secb}
+                      {this.props.academics.s.secb}
                     </div>
                   </div>
                   <div className="col s2">
                     <div>
                       <span>Percentage : </span>
-                      {this.state.secp}
+                      {this.props.academics.s.secp}
                     </div>
                   </div>
                 </div>
@@ -194,13 +202,13 @@ export class TSInfo extends Component {
                   <div className="col s2">
                     <div>
                       <span>Board : </span>
-                      {this.state.highb}
+                      {this.props.academics.s.highb}
                     </div>
                   </div>
                   <div className="col s2">
                     <div>
                       <span>Percentage : </span>
-                      {this.state.highp}
+                      {this.props.academics.s.highp}
                     </div>
                   </div>
                 </div>
