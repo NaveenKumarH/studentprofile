@@ -2,6 +2,7 @@ const ssearch = details => {
   return (dispatch, getState, { getFirebase, getFirestore }) => {
     let flag = 0;
     const firestore = getFirestore();
+
     firestore
       .collection("academics")
       .get()
@@ -13,12 +14,20 @@ const ssearch = details => {
             data.data().details.sub === details.sub
           ) {
             flag = 1;
-            dispatch({
-              type: "RETRIEVE_SUCCESS",
-              data: data.data(),
-              id: "s",
-              pre: "yes"
-            });
+
+            firestore
+              .collection("users")
+              .doc(data.data().details.tid)
+              .get()
+              .then(doc => {
+                dispatch({
+                  type: "RETRIEVE_SUCCESS",
+                  data: data.data(),
+                  id: "s",
+                  pre: "yes",
+                  name: doc.data().name
+                });
+              });
           }
         });
         if (flag === 0) {

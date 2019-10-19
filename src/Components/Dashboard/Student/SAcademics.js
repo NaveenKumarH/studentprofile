@@ -15,6 +15,7 @@ export class SAcademics extends Component {
   handleClick = e => {
     e.preventDefault();
     this.props.ssearch(this.state);
+    console.log(this.props);
   };
   render() {
     const firestore = firebase.firestore();
@@ -56,9 +57,9 @@ export class SAcademics extends Component {
         ) : (
           <div className="row white-text">
             <div className="row">
-              <div className="col s2 left-align">Student Roll No.</div>
+              <div className="col s2 left-align">Handling Teacher:</div>
               <div className="col s1">:</div>
-              <div className="col s2">{this.props.academics.s.details.srn}</div>
+              <div className="col s2">{this.props.academics.name}</div>
             </div>
 
             <div className="row">
