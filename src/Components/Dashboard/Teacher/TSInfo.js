@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import sds from "../../../store/Actions/SDS";
 export class TSInfo extends Component {
-  state = {};
+  state = { srn: "" };
   handleChange = e => {
     this.setState({
       [e.target.id]: e.target.value
@@ -14,7 +14,7 @@ export class TSInfo extends Component {
   };
   render() {
     return (
-      <div className="container">
+      <div className="container center">
         <div className="row input-field">
           <label>Student Reg No.</label>
           <input
@@ -32,7 +32,9 @@ export class TSInfo extends Component {
   }
 }
 const mapstate = state => {
-  return {};
+  return {
+    academics: state.academic
+  };
 };
 const mapdispatch = dispatch => {
   return {

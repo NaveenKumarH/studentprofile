@@ -29,6 +29,7 @@ const signup = details => {
             ugd: "",
             pgc: "",
             pgd: "",
+            regno: details.regno,
             type: details.type,
             addtime: new Date()
           });
