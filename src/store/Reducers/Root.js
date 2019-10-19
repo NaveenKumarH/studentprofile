@@ -5,11 +5,13 @@ import Academic from "./Academic";
 import { firestoreReducer } from "redux-firestore";
 import { combineReducers } from "redux";
 import { firebaseReducer } from "react-redux-firebase";
+import Attendance from "./Attendance";
 const Root = combineReducers({
   auth: Auth,
   event: Event,
   details: Details,
   academic: Academic,
+  attendance: Attendance,
   firestore: firestoreReducer,
   firebase: firebaseReducer
 });

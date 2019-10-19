@@ -1,10 +1,8 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import addaca from "../../../store/Actions/AcademicAction";
+import addattend from "../../../store/Actions/AttendAction";
 export class TAddAttend extends Component {
-  state = {
-    tid: this.props.tid
-  };
+  state = {};
   handleChange = e => {
     this.setState({
       [e.target.id]: e.target.value
