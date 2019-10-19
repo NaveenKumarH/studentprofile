@@ -1,11 +1,11 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
 import { connect } from "react-redux";
-import search from "../../../store/Actions/Search";
+import firebase from "firebase";
+import ssearch from "../../../store/Actions/StudentSearch";
 export class SAcademics extends Component {
   state = {
-    se: "",
-    tid: this.props.tid
+    srn: "",
+    sub: ""
   };
   handleChange = e => {
     this.setState({
@@ -14,16 +14,20 @@ export class SAcademics extends Component {
   };
   handleClick = e => {
     e.preventDefault();
-    this.props.search(this.state);
+    this.props.ssearch(this.state);
   };
   render() {
+    const firestore = firebase.firestore();
+    firestore
+      .collection("users")
+      .doc(this.props.data)
+      .get()
+      .then(doc => {
+        this.setState({ srn: doc.data().regno });
+      });
+
     return (
       <div className="container center">
-        <div className="btn green white-text row">
-          <Link to="/taddacademics" className="white-text">
-            Add New
-          </Link>
-        </div>
         <div className="row input-field">
           <label>Exam.</label>
           <input
@@ -34,12 +38,12 @@ export class SAcademics extends Component {
           ></input>
         </div>
         <div className="row input-field ">
-          <label>Student Roll No.</label>
+          <label>Subject.</label>
           <input
             type="text"
             className="col white"
             onChange={this.handleChange}
-            id="se"
+            id="sub"
           ></input>
           <button className="btn green white-text" onClick={this.handleClick}>
             Search
@@ -78,12 +82,12 @@ export class SAcademics extends Component {
 const mapstate = state => {
   return {
     academics: state.academic,
-    tid: state.firebase.auth.uid
+    data: state.firebase.auth.uid
   };
 };
 const mapdispatch = dispatch => {
   return {
-    search: details => dispatch(search(details))
+    ssearch: details => dispatch(ssearch(details))
   };
 };
 export default connect(

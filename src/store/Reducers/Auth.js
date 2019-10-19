@@ -27,7 +27,8 @@ const Auth = (state = initState, action) => {
       return {
         ...state,
         authError: null,
-        type: action.utype
+        type: action.utype,
+        data: action.data
       };
     case "LOGOUT_SUCCESS":
       return {

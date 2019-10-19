@@ -9,7 +9,11 @@ export const signin = credentials => {
         const docRef = firestore.collection("users").doc(res.user.uid);
 
         docRef.get().then(doc => {
-          dispatch({ type: "LOGIN_SUCCESS", utype: doc.data().type });
+          dispatch({
+            type: "LOGIN_SUCCESS",
+            utype: doc.data().type,
+            data: doc.data()
+          });
         });
       })
       .catch(err => {

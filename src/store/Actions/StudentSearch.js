@@ -1,4 +1,4 @@
-const search = details => {
+const ssearch = details => {
   return (dispatch, getState, { getFirebase, getFirestore }) => {
     let flag = 0;
     const firestore = getFirestore();
@@ -8,9 +8,9 @@ const search = details => {
       .then(doc => {
         doc.docs.forEach(data => {
           if (
-            data.data().details.srn === details.se &&
-            data.data().details.tid === details.tid &&
-            data.data().details.exam === details.exam
+            data.data().details.srn === details.srn &&
+            data.data().details.exam === details.exam &&
+            data.data().details.sub === details.sub
           ) {
             flag = 1;
             dispatch({
@@ -35,5 +35,4 @@ const search = details => {
       });
   };
 };
-
-export default search;
+export default ssearch;
