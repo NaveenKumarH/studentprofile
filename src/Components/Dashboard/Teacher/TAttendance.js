@@ -46,14 +46,26 @@ export class TAttendance extends Component {
             Search
           </button>
         </div>
-        ;
+        {this.props.attendance.pre === undefined ? (
+          <div></div>
+        ) : this.props.attendance.pre === "no" ? (
+          <div className="white-text">No data found</div>
+        ) : (
+          <div className="row white-text">
+            <div className="row">
+              <div className="col s2 left-align">Attendance Percentage</div>
+              <div className="col s1">:</div>
+              <div className="col s2">{this.props.attendance.s.details.ap}</div>
+            </div>
+          </div>
+        )}
       </div>
     );
   }
 }
 const mapstate = state => {
   return {
-    academics: state.academic
+    attendance: state.attendance
   };
 };
 const mapdispatch = dispatch => {

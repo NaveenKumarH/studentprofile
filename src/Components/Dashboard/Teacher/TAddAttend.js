@@ -29,7 +29,7 @@ export class TAddAttend extends Component {
           </div>
           <div className="input-field">
             <label>Attendance Percentage</label>
-            <input type="text" id="exam" onChange={this.handleChange}></input>
+            <input type="text" id="ap" onChange={this.handleChange}></input>
           </div>
 
           <input
