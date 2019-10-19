@@ -38,6 +38,14 @@ class Teacher extends Component {
               </div>
             </Link>
           </div>
+          <div className="row container">
+            <Link to="/tsinfo" className="white-text">
+              {" "}
+              <div className="card-panel grey darken-3 center">
+                STUDENT INFORMATION<br></br>
+              </div>
+            </Link>
+          </div>
         </div>
       </div>
     );

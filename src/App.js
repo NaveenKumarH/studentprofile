@@ -17,7 +17,7 @@ import TPersonal from "./Components/Dashboard/Teacher/TPersonal";
 import TPersonalEdit from "./Components/Dashboard/Teacher/TPersonalEdit";
 import TAcademics from "./Components/Dashboard/Teacher/TAcademics";
 import TAddAcademics from "./Components/Dashboard/Teacher/TAddAcademics";
-
+import TSInfo from "./Components/Dashboard/Teacher/TSInfo";
 function App() {
   return (
     <BrowserRouter>
@@ -40,6 +40,7 @@ function App() {
         <Route path="/tpersonal" component={TPersonal}></Route>
         <Route path="/tpersonale" component={TPersonalEdit}></Route>
         <Route path="/taddacademics" component={TAddAcademics}></Route>
+        <Route path="/tsinfo" component={TSInfo}></Route>
       </Switch>
     </BrowserRouter>
   );
