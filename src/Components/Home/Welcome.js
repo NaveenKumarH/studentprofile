@@ -8,7 +8,7 @@ class Welcome extends Component {
           <div className="col s12 center">
             <h1 className="white-text">Student Profiling System!!</h1>
             <h5 className="grey-text lighten-2">
-              SignUp or SignIn to start --->
+              SignUp or SignIn to start -->
             </h5>
           </div>
         </div>
