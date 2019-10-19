@@ -14,7 +14,7 @@ export class TSInfo extends Component {
   };
   render() {
     return (
-      <div className="container center">
+      <div className="container center white-text">
         <div className="row input-field">
           <label>Student Reg No.</label>
           <input
@@ -212,11 +212,9 @@ export class TSInfo extends Component {
                     </div>
                   </div>
                 </div>
-                }
               </div>
             </div>
           )}
-          ;
         </div>
       </div>
     );
