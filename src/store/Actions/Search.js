@@ -13,12 +13,22 @@ const search = details => {
             data.data().details.exam === details.exam
           ) {
             flag = 1;
-            dispatch({
-              type: "RETRIEVE_SUCCESS",
-              data: data.data(),
-              id: "s",
-              pre: "yes"
-            });
+            firestore
+              .collection("users")
+              .get()
+              .then(doc => {
+                doc.docs.forEach(datum => {
+                  if (datum.data().regno === details.se) {
+                    dispatch({
+                      type: "RETRIEVE_SUCCESS",
+                      data: data.data(),
+                      id: "s",
+                      pre: "yes",
+                      name: datum.data().name
+                    });
+                  }
+                });
+              });
           }
         });
         if (flag === 0) {

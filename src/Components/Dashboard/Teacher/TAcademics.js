@@ -53,9 +53,9 @@ export class TAcademics extends Component {
         ) : (
           <div className="row white-text">
             <div className="row">
-              <div className="col s2 left-align">Student Roll No.</div>
+              <div className="col s2 left-align">Student Name.</div>
               <div className="col s1">:</div>
-              <div className="col s2">{this.props.academics.s.details.srn}</div>
+              <div className="col s2">{this.props.academics.name}</div>
             </div>
 
             <div className="row">
