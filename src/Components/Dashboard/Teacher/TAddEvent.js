@@ -6,7 +6,8 @@ export class TAddEvent extends Component {
     title: "",
     desc: "",
     venue: "",
-    date: ""
+    date: "",
+    id: this.props.id
   };
   handleChange = e => {
     this.setState({
@@ -58,13 +59,17 @@ export class TAddEvent extends Component {
     );
   }
 }
-
+const mapstate = state => {
+  return {
+    id: state.firebase.auth.uid
+  };
+};
 const mapdispatch = dispatch => {
   return {
     addevent: event => dispatch(addevent(event))
   };
 };
 export default connect(
-  null,
+  mapstate,
   mapdispatch
 )(TAddEvent);
